@@ -1,0 +1,232 @@
+@font-face {
+    font-family: 'Vazir';
+    src: url('../assets/fonts/Vazir.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Vazir', Arial, sans-serif;
+    background: #006600; /* سبز پرچم ایران */
+    color: #FFFFFF; /* سفید پرچم ایران */
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    direction: rtl;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.light-theme {
+    background: #FFFFFF; /* سفید برای تم روشن */
+    color: #006600; /* سبز برای متن */
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, #006600, #FFFFFF, #CC0000); /* گرادیانت پرچم ایران */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.info-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.info-box h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #CC0000; /* قرمز پرچم ایران */
+}
+
+.info-box p, .info-box ul, .info-box details {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin: 8px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: rgba(0, 102, 0, 0.3); /* سبز تیره */
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+ul li:hover {
+    background: rgba(0, 102, 0, 0.5);
+}
+
+a {
+    color: #CC0000; /* قرمز */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #FFFFFF; /* سفید */
+}
+
+.copy-btn {
+    background: #006600; /* سبز */
+    color: #FFFFFF; /* سفید */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+}
+
+.copy-btn:hover {
+    background: #CC0000; /* قرمز */
+}
+
+.copy-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+}
+
+.copy-btn:active::after {
+    width: 200px;
+    height: 200px;
+}
+
+.theme-toggle {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+#theme-btn {
+    background: #006600; /* سبز */
+    color: #FFFFFF; /* سفید */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#theme-btn:hover {
+    background: #CC0000; /* قرمز */
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: #FFFFFF;
+}
+
+details {
+    margin: 12px 0;
+    background: rgba(0, 102, 0, 0.3);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #CC0000;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1em;
+    color: #FFFFFF;
+}
+
+.footer a {
+    color: #CC0000;
+}
+
+.footer a:hover {
+    color: #FFFFFF;
+}
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #006600;
+    color: #FFFFFF;
+    padding: 12px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeInOut 2.5s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, 30px); }
+    10% { opacity: 1; transform: translate(-50%, 0); }
+    90% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, 30px); }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2.2em;
+    }
+    .info-box h2 {
+        font-size: 1.4em;
+    }
+    .info-box p, .info-box ul, .info-box details {
+        font-size: 1em;
+    }
+}
